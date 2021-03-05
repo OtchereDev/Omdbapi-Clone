@@ -3,6 +3,7 @@ from django.shortcuts import render
 from rest_framework.generics import CreateAPIView, ListAPIView, ListCreateAPIView, RetrieveAPIView
 from django_filters.rest_framework import DjangoFilterBackend
 
+
 from .models import Genre, Movie
 from .serializers import MovieSerializer,GenreSerializer
 
@@ -12,6 +13,7 @@ class MovieListView(ListAPIView):
     serializer_class=MovieSerializer
     filter_backends=[DjangoFilterBackend]
     filterset_fields = ['title','genre__name','language','type']
+
 
 
 class MovieCreateView(CreateAPIView):
